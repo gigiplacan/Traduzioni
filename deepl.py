@@ -3,8 +3,8 @@ import sys
 import os
 import json
 
-# Carica l'API key da token.json
-with open("token.json", "r") as token_file:
+# Carica l'API key da config.json
+with open("config.json", "r") as token_file:
     token_data = json.load(token_file)
 
 AUTH_KEY = token_data.get("deepL_api_key", "")
@@ -25,13 +25,18 @@ def translatedoc(path):
     response = requests.post(translate_url, params=_params, files={"file": up_file})
     jdata = response.json()
 
+    print("\n*****************************************************\n")
+    print("[status] => python3 deepl.py status {0} {1}".format(jdata["document_id"],jdata["document_key"]))
+    print("[download] => python3 deepl.py download {0} {1}".format(jdata["document_id"],jdata["document_key"]))
+    print("\n*****************************************************\n")
+
     if 'document_id' in jdata and 'document_key' in jdata:
         translated_file_name, _ = os.path.splitext(os.path.basename(path))
         translated_file_path = os.path.join(output_folder, f"{translated_file_name}")
         
         with open(translated_file_path, "wb") as translated_file:
-            downloadtranslation(jdata["ocument_id"], jdata["document_key"], translated_file_path)
-
+            downloadtranslation(jdata["document_id"], jdata["document_key"], translated_file_path)
+    
     return translated_file_path  # Ora restituisce anche se le chiavi non sono presenti nella risposta
 
 
@@ -58,7 +63,7 @@ def downloadtranslation(docid, dockey, file_name):
     with open(output_file_path, "wb") as translated_file:
         translated_file.write(response.content)
     
-    print(f"File tradotto salvato in: {output_file_path}")
+    print(f"File tradotto salvato in: {output_file_path} \n")
 
 action = sys.argv[1]
 if action == "translate":
