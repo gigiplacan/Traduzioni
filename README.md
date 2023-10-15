@@ -10,7 +10,9 @@ Per utilizzare questo programma, seguire questi passaggi:
    Assicurarsi che il file da tradurre sia nel formato corretto e contenga tutti i testi da tradurre. Il file deve essere in un formato supportato dal programma.
 
 2. **Esecuzione del Programma:**
-   Eseguire il programma e specificare il percorso del file da tradurre come input.
+   Eseguire il programma con il seguente comando in console: `python3 deepl.py translate nomeFile.txt`. Assicurarsi che il file `nomeFile.txt` sia presente nelle stessa directory del file `deepL.py`.
+   Se l'esecuzione del programma richiede troppo tempo controllare lo `status` mediante comando suggerito in console.
+   Se il programma non crea il file tradotto automaticamente, eseguire il comando `download` suggerito in console.
 
 3. **Consiglio per Migliori Risultati:**
 Per ottenere una traduzione più accurata e ridurre i tempi di traduzione, si consiglia di spezzare il file di input in più file più piccoli. Questo aiuterà a migliorare la qualità della traduzione e a ridurre i tempi di elaborazione.
