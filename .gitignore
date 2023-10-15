@@ -7,3 +7,6 @@
 
 # Eccezione per il file .gitignore stesso
 !.gitignore
+
+# Eccezione per i file JSON
+!*.json
