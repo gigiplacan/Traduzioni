@@ -8,8 +8,6 @@ translate_url = "https://api-free.deepl.com/v2/document"
 translate_status_url = "https://api-free.deepl.com/v2/document/{0}"
 translate_download_url = "https://api-free.deepl.com/v2/document/{0}/result"
 
-
-
 def translatedoc(path):
     translated_file_path = None  # Inizializza con None
     up_file = open(path, "rb")
