@@ -1,5 +1,6 @@
 # Star Citizen Translation Tool
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?plastic&logo=visual-studio-code&logoColor=white) ![Python](https://img.shields.io/badge/python_3.9-3670A0?style=flat&logo=python&logoColor=ffffff)
+
 Questo progetto è un'applicazione che consente di tradurre tutti i contenuti di gioco di Star Citizen in diverse lingue. Utilizza le potenti API di DeepL per effettuare traduzioni automatiche e produce un file tradotto in output.
 
 ## Istruzioni per l'uso
