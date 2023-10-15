@@ -1,0 +1,9 @@
+# Ignora i file con estensione .txt e .ini
+*.txt
+*.ini
+
+# Ignora i file senza estensione
+*.*
+
+# Eccezione per il file .gitignore stesso
+!.gitignore
