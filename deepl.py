@@ -1,8 +1,13 @@
 import requests
 import sys
 import os
+import json
 
-AUTH_KEY = "1efe9493-e06f-9ae1-8470-c819860ebcc0:fx"
+# Carica l'API key da token.json
+with open("token.json", "r") as token_file:
+    token_data = json.load(token_file)
+
+AUTH_KEY = token_data.get("deepL_api_key", "")
 
 translate_url = "https://api-free.deepl.com/v2/document"
 translate_status_url = "https://api-free.deepl.com/v2/document/{0}"
@@ -25,7 +30,7 @@ def translatedoc(path):
         translated_file_path = os.path.join(output_folder, f"{translated_file_name}")
         
         with open(translated_file_path, "wb") as translated_file:
-            downloadtranslation(jdata["document_id"], jdata["document_key"], translated_file_path)
+            downloadtranslation(jdata["ocument_id"], jdata["document_key"], translated_file_path)
 
     return translated_file_path  # Ora restituisce anche se le chiavi non sono presenti nella risposta
 
