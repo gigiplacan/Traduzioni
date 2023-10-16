@@ -25,7 +25,7 @@ Una volta completata la traduzione, il programma creerà nuovi file contenenti i
 
 - Python 3.5 o versioni successive.
 - Accesso a Internet per utilizzare le API di DeepL.
-- Token API DeepL ottenuto tramite registrazione sul sito DeepL.
+- Token A PI DeepL ottenuto tramite registrazione sul sito DeepL.
 
 ## Configurazione delle API di DeepL
 È necessario registrarsi al sito di DeepL per ottenere un token per le API e in seguito configurare le credenziali delle API ottenute per utilizzarle in questo programma. Modificare il file di configurazione `config.json` e inserire le credenziali corrette fornite da DeepL.
