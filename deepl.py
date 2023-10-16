@@ -51,7 +51,7 @@ def docstatus(docid,dockey):
 def downloadtranslation(docid, dockey, file_name):
     output_folder = os.path.dirname(os.path.abspath(__file__)) 
     file_name_without_extension, extension = os.path.splitext(os.path.basename(file_name))
-    output_file_path = os.path.join(output_folder, f"{file_name_without_extension}.ini")
+    output_file_path = os.path.join(output_folder, f"{file_name_without_extension}_it.txt")
     
     _params = {
         "auth_key": AUTH_KEY,
