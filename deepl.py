@@ -16,7 +16,7 @@ translate_download_url = "https://api-free.deepl.com/v2/document/{0}/result"
 def translatedoc(path):
     translated_file_path = None  # Inizializza con None
     up_file = open(path, "rb")
-    output_folder = os.path.dirname(path) 
+    output_folder = os.path.dirname(path)
     _params = {
         "source_lang": "EN",
         "auth_key": AUTH_KEY,
@@ -32,11 +32,10 @@ def translatedoc(path):
 
     if 'document_id' in jdata and 'document_key' in jdata:
         translated_file_name, _ = os.path.splitext(os.path.basename(path))
-        translated_file_path = os.path.join(output_folder, f"{translated_file_name}")
-        
-        with open(translated_file_path, "wb") as translated_file:
-            downloadtranslation(jdata["document_id"], jdata["document_key"], translated_file_path)
-    
+        translated_file_path = os.path.join(output_folder, f"{translated_file_name}_.txt")  # Aggiungi "_it.txt" al nome del file tradotto
+
+        downloadtranslation(jdata["document_id"], jdata["document_key"], translated_file_path)
+
     return translated_file_path  # Ora restituisce anche se le chiavi non sono presenti nella risposta
 
 
@@ -51,7 +50,7 @@ def docstatus(docid,dockey):
 def downloadtranslation(docid, dockey, file_name):
     output_folder = os.path.dirname(os.path.abspath(__file__)) 
     file_name_without_extension, extension = os.path.splitext(os.path.basename(file_name))
-    output_file_path = os.path.join(output_folder, f"{file_name_without_extension}_it.txt")
+    output_file_path = os.path.join(output_folder, f"{file_name_without_extension}it.txt")
     
     _params = {
         "auth_key": AUTH_KEY,
